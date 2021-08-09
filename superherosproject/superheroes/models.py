@@ -8,4 +8,7 @@ class Superhero(models.Model):
     primary_ability = models.CharField(max_length=50)
     secondary_ability = models.CharField(max_length=50)
     catchphrase = models.CharField(max_length=50)
-    
+
+
+    def __str__(self):
+        return self.name
