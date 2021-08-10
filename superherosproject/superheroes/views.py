@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Superhero
 
 # Create your views here.
+
 def index(request):
     all_superheroes = Superhero.objects.all()
     context = {
@@ -10,3 +11,4 @@ def index(request):
     }
     return render(request, 'superheroes/index.html', context)
 
+def detail(request, superhero_id):
