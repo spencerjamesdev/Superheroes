@@ -8,10 +8,28 @@
 </head>
 <body>
     <h1>List of Superheroes</h1>
-    <ul>
-        {%for superhero in all_superheroes %}
-        <li><h2> {{superhero.name}} </h2></li>
-        {% endfor %}
-    </ul>
+    <img src = "image.jpg" alt="Vanya">
+    
+    <table style="border-collapse: collapse; border-color: blue;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Details</th>
+                <th>Delete</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {%for superhero in all_superheroes %}
+            <tr>
+                <td>{{superhero.name}}</td>
+                <td><a href="{% url 'superheroes:detail' superhero.id %}">Details</a></td>
+                <td><a style="background-color: red" href="{% url  'superheroes:delete' superhero.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <a href="{% url 'superheroes:create' %}">Create</a>
 </body>
 </html>

@@ -1,0 +1,10 @@
+<div class="main">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <p>Are you sure you want to delete this item ?</p>
+        <input type="submit" value="Yes" />
+        <a href="{% url 'superheroes:index' %}">Cancel </a>
+    </form>
+</div>
